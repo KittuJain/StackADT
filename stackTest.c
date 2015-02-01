@@ -7,9 +7,15 @@
 #include <math.h>
 
 void test_createStack_creates_an_empty_stack (){
-	Stack new_stack;
-	new_stack = createStack();
-	assertEqual(new_stack.list->count, 0);
-	assert(*new_stack.top == 0);
-	free(new_stack.list);
+	Stack stack;
+	stack = createStack();
+	assertEqual(stack.list->count, 0);
+	assert(*stack.top == 0);
+	free(stack.list);
+}
+
+void test_push_populates_stack_with_an_integer_element (){
+	Stack stack = createStack();
+	int data = 10;
+	assertEqual(push(stack, (void*)&data),1);
 }
