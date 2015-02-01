@@ -76,7 +76,7 @@ void test_pop_deletes_the_topmost_element_from_the_stack (){
 void test_pop_returns_minus_1_when_there_is_no_element_on_stack (){
 	Stack stack = createStack();
 	assertEqual(stack.list->count, 0);
-	assert((int*)pop(stack)==-1);
+	assert((int)pop(stack)==-1);
 	assertEqual(stack.list->count, 0);
 	free(stack.list);
 }
