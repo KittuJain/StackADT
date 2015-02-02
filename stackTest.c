@@ -54,6 +54,14 @@ void test_push_populates_stack_with_two_string_elements (){
 	free(stack.list);
 }
 
+void test_pop_returns_minus_1_when_there_is_no_element_on_stack (){
+	Stack stack = createStack();
+	assertEqual(stack.list->count, 0);
+	assert((int)pop(&stack)==-1);
+	assertEqual(stack.list->count, 0);
+	free(stack.list);
+}
+
 void test_pop_deletes_an_element_from_the_stack (){
 	Stack stack = createStack();
 	int data1 = 20;
@@ -70,13 +78,5 @@ void test_pop_deletes_the_topmost_element_from_the_stack (){
 	push(&stack, (void*)&data2);
 	assertEqual(*(int*)pop(&stack),21);
 	assertEqual(stack.list->count, 1);
-	free(stack.list);
-}
-
-void test_pop_returns_minus_1_when_there_is_no_element_on_stack (){
-	Stack stack = createStack();
-	assertEqual(stack.list->count, 0);
-	assert((int)pop(&stack)==-1);
-	assertEqual(stack.list->count, 0);
 	free(stack.list);
 }
