@@ -5,7 +5,7 @@
 
 Stack createStack(void){
 	LinkedList* list = calloc(sizeof(LinkedList), 1);
-	Stack stack = {list, &list->tail};
+	Stack stack = {list, list->tail};
 	return stack;
 }
 

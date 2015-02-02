@@ -3,7 +3,7 @@ typedef struct stack Stack;
 
 struct stack{
 	LinkedList* list;
-	Node_ptr* top;
+	Node_ptr top;
 };
 
 Stack createStack(void);

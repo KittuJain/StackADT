@@ -10,7 +10,7 @@ void test_createStack_creates_an_empty_stack (){
 	Stack stack;
 	stack = createStack();
 	assertEqual(stack.list->count, 0);
-	assert(*stack.top == 0);
+	assert(stack.top == 0);
 	free(stack.list);
 }
 
